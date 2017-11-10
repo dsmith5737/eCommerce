@@ -1,0 +1,163 @@
+<!doctypehtml>
+<!DOCTYPE html>
+    <html>
+        <head>
+        <title>Buy My Stuff</title>
+        </head>
+        <style>
+	
+        
+        html{
+    
+        background:url('black and white.png') no-repeat center center fixed;
+	    -webkit-background-size:cover;
+	    -moz-background-size:cover;
+	    -o-background-size:cover;
+	    background-size:cover;
+           }
+	   *{
+                 margin: 0;
+		 padding: 0;
+            }
+           h1{
+ 		font-family: "Cooper Black",Cooper Black ,serif;
+		font-size: 70px;
+		text-decoration: underline;
+		text-shadow: 3px 2px blue;
+		color: white
+            }	
+            p{
+ 		font-family: "Cooper Black", Cooper Black ,serif;
+		font-size: 30px;
+		text-shadow: 3px 2px blue;
+		color: white
+            }
+	    span{
+		font-family: "Cooper Black", Cooper Black ,serif;
+	        font-size: 40px;
+		text-shadow: 3px 2px red;
+                color: white
+		
+	    }
+            img{
+                width:300px;
+		border-radius: 5px;
+		opacity: 0.5;
+    		filter: alpha(opacity=50);
+		
+            }
+	    img:hover{
+		opacity: 1.0;
+    		filter: alpha(opacity=100);
+		
+	    }
+            input{
+                width:30px;
+		border-radius: 8px;
+		font-family: "Cooper Black", Cooper Black , serif;
+            } 
+            div{
+		font-family: "Cooper Black", Cooper Black ,serif;
+	        font-size: 20px;
+		border: 25px white;
+		text-shadow: 3px 2px black;
+	        color: white
+	    }  
+	    
+	    
+	    
+            
+        </style>
+        <script>
+            function sub(){
+                var q1 = document.getElementById("q1")
+                var q2 = document.getElementById("q2")
+                var q3 = document.getElementById("q3")
+                var output = document.getElementById("output")
+                var subtotal = (parseInt(q1.value)* 39.99) + (parseInt(q2.value)* 15.99)+ (parseInt(q3.value)* 20.00)
+                var tax = .0875*subtotal
+                var s;
+                if (subtotal<=100&& subtotal>=200){
+                    s = 10.00
+                }else if(subtotal<=100){
+                    s = 25.00
+                }else(subtotal>=200)
+                    s = 0
+                
+                var total = subtotal + tax + s
+                var build ="";
+                build+="Subtotal:"+subtotal.toFixed(2) + "<br>";
+                build+="Tax:"+tax.toFixed(2) + "<br>";
+                build+="Shipping:"+s.toFixed(2) +"<br>";
+                build+="________________________<br>";
+                build+="Total:"+ "$"+ total.toFixed(2);
+                output.innerHTML=build;
+            }
+            
+             function profit(){
+                var q1 = document.getElementById("q1");
+                var q2 = document.getElementById("q2");
+                var q3 = document.getElementById("q3");
+		var output = document.getElementById("output");
+                var whole1 = 45.00
+                var whole2 = 17.99
+                var whole2 = 25.00
+                var subtotal = (parseInt(q1.value)* 39.99) + (parseInt(q2.value)* 15.99)+ (parseInt(q3.value)* 20.00);
+                var subtotal2 = (parseInt(q1.value)* whole1) + (parseInt(q2.value)* whole2)*+ (parseInt(q3.value)* whole3);
+                var comsub = subtotal2 - subtotal
+                var build ="";
+                build+="item 1:" + q1.value + "<br>";
+                build+="item 2:" + q2.value + "<br>";
+                build+="item 3:" + q3.value + "<br>";
+                build+="____________________________<br>";
+                build+="Total items sold:" + q1.value + q2.value + q3.value+"<br><br>";
+                build+="Customer subtotal:" + subtotal + "<br>";
+                build+="Company subtotal:" + subtotal2 + "<br>";
+                build+="_______________________________<br>"
+                build+="Company total:" + comsub + "<br>";
+		output.innerHTML=build;
+		console.log(build);
+                }
+	   
+
+	</script>
+        <body>
+            <div>
+                <h1>Zane Hijazi hoodie</h1>
+		<img src="zane merch.jpg"><br>
+                <span>
+                    $39.99
+                </span>
+                <p>
+                   a white hoodie with zane hijazi wearing a crown.
+                </p>
+		
+                Quanity:<input type= "text" id ="q1">
+               <h1>Stranger Things Poster</h1>
+                <img src="strangerthingsposter.jpg" ><br>
+                <span>
+                    $15.99
+                </span>
+                <p>
+                  a firestarter themed poster which features the Stranger Things character Eleven.   
+                </p>
+                Quanity:<input type = "text" id = "q2">
+                <h1>Stranger Things Mug</h1>
+                <img src="mug.jpg"><br>
+                <span>
+                    $20.00
+                </span>
+                <p>
+                  a stranger things mug which has the lights ,a bike, and the iconic line"friends don't lie"
+                </p>
+                Quanity:<input type = "text" id = "q3">
+		
+                <div id = "output"></div>
+
+	        <button onclick = "sub()","profit()">
+                    CHECKOUT!
+                </button>
+		
+		
+        </body>
+    </html>
